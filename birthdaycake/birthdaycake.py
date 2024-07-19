@@ -26,22 +26,24 @@ def birthdayCakeCandles(candles):
      candles = list(map(int, input().rstrip().split()))
  
      i = 0
-     bigger_number = 0
+     tallets_number = 0
      candles_total = 0
 
      #Counting biggest number in candles array
      for x in range(len(candles)):
-       if(bigger_number < candles[i]):
-         bigger_number = candles[i]
+       if(tallets_number < candles[i]):
+         tallets_number = candles[i]
        print(candles[i])  
 
      #counting each biggest number in array
      for x in range(len(candles)):
-       if(bigger_number == candles[i]):
+       if(tallets_number == candles[i]):
          candles_total = candles_total + 1
  
  
+     
      result = print(candles_total)
+     print("the total of tallest candles is" + str(result))
  
      fptr.write(str(result) + '\n')
  
