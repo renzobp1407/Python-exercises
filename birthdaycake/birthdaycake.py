@@ -15,36 +15,28 @@ import sys
 
 def birthdayCakeCandles(candles):
     # Write your code here
+    
+    max_candle_height = 0
+    candles_count = 0
+    
+    # extracting the tallest number
+    for candle in candles:
+        if(max_candle_height <= candle):
+            max_candle_height = candle
+            
+    for candle in candles:
+       if(max_candle_height == candle):
+           candles_count += 1        
+           
+    return(candles_count)
 
- if __name__ == '__main__':
-     fptr = open(os.environ['OUTPUT_PATH'], 'w')
- 
-     #count candles and remove whitespaces
-     candles_count = int(input().strip())
- 
-     #put every candle number in a list, removing the last one and spliting, each number with an int value
-     candles = list(map(int, input().rstrip().split()))
- 
-     i = 0
-     tallets_number = 0
-     candles_total = 0
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-     #Counting biggest number in candles array
-     for x in range(len(candles)):
-       if(tallets_number < candles[i]):
-         tallets_number = candles[i]
-       print(candles[i])  
+    candles_count = int(input().strip())
+    candles = list(map(int, input().rstrip().split()))
 
-     #counting each biggest number in array
-     for x in range(len(candles)):
-       if(tallets_number == candles[i]):
-         candles_total = candles_total + 1
- 
- 
-     
-     result = print(candles_total)
-     print("the total of tallest candles is" + str(result))
- 
-     fptr.write(str(result) + '\n')
- 
-     fptr.close()
+
+    result = birthdayCakeCandles(candles)
+    fptr.write(str(result) + '\n')
+    fptr.close()
