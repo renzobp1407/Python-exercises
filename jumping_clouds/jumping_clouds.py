@@ -13,52 +13,39 @@ import sys
 # The function accepts INTEGER_ARRAY c as parameter.
 #
 
+# output example
+# 0 0 1 0 0 1 0  
+# 0 1 0 0 1 0
+
 def jumpingOnClouds(c):
-    # Write your code here
-    # 0 0 0 0 1 0
-    
-    # 0 1 0 0 1 0
+
     
     sum_jumps = 0
     
     for i in range(len(c)):
          
+        # the index is going to get out of bound, breaks
         if(i+2 >= len(c)):
             break
-
+        
+        # When the index is equals to the  last value of the list, breaks
         if(i == len(c) - 1):
-            if (c[i] == 0 and c[i+1] == 1):
+            if (c[i] == 0 and c[i+1] == 0):
                 sum_jumps += 1
                 i += 1
                 break
-
-        
-        if(i == len(c)):
-            break
-        
-            # 0 0 1 0 0 1 0
-            # 0 0 0 1 0 0
-        if (c[i] == 0 and c[i+1] == 1):
+        elif (c[i] == 0 and c[i+1] == 1):
             sum_jumps += 1
             i += 2
-        elif (i == len(c) - 1 and c[i] == 0 and c[i+1] == 0):
+        elif (c[i] == 0 and c[i+1] == 1 and c[i+2] ==0):
             sum_jumps += 1
-            i += 1
+            i += 2
         elif (c[i] == 0 and c[i+1] == 0 and c[i+2] == 1):
             sum_jumps += 1
             i += 1
         elif (c[i] == 0 and c[i+1] == 0 and c[i+2] == 0):
-            sum_jumps += 2
+            sum_jumps += 1
             i += 2
-
-        #if(i+2 >= len(c)):
-        #    if (c[i] == 0 and c[i+1] == 1):
-        #        sum_jumps += 2
-        #        i += 2
-        #    elif (c[i] == 1 and c[i+1] == 0):
-        #        sum_jumps += 1
-        #        i += 1
-                            
 
     return(sum_jumps)
     
