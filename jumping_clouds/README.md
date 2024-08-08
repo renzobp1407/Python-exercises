@@ -38,13 +38,13 @@ al ejecutar el **jumping_clouds.py** no resolvia todos los casos de uso, es por 
 
 Empecé a realizar el ejercicio y quedó guardado en **jumping_clouds2.py**
 
-- al ver que los test cases me fallaban, decidí darle mejor un enfoque con 'while' por que sentia que podia controlar mejor las iteraciones del array
+- al ver que los test cases me fallaban, decidí darle mejor un enfoque con `while` por que sentia que podia controlar mejor las iteraciones del array
 
-- decidí empezar con 3 'if' que validaban 3 posiciones para contar los saltos (inicial, siguiente +1 y siguiente +2 ) y sumar al indice +1 para que avance en el array
+- decidí empezar con 3 `if` que validaban 3 posiciones para contar los saltos (inicial, siguiente +1 y siguiente +2 ) y sumar al indice +1 para que avance en el array
 
-- realicé un print a la variable 'sum_jumps' para verificar su valor y llevar el seguimiento de los saltos
+- realicé un print a la variable `sum_jumps` para verificar su valor y llevar el seguimiento de los saltos
 
-- al seguir la ejecución del array, me daba cuenta que no validaba el caso que 'i+2' se quedaba sin indice pero 'i+1' si tenia indice, entonces me arrojaba error y decidí hacer las 2 siguietes condiciones:
+- al seguir la ejecución del array, me daba cuenta que no validaba el caso que `i+2` se quedaba sin indice pero `i+1` si tenia indice, entonces me arrojaba error y decidí hacer las 2 siguietes condiciones:
 
 ```python
 if(i+2 > len(c) - 1 ):
@@ -53,7 +53,7 @@ if(i+1 > len(c) - 1):
     break    
 ```
 
-al hacerlas con los impares no tenia problemas, pero con los pares que el indice 'i+1' sobraba, no sumaba ese ultimo (o 2 ultimos)
+al hacerlas con los impares no tenia problemas, pero con los pares que el indice `i+1` sobraba, no sumaba ese ultimo (o 2 ultimos)
 
 - entonces decidí realizar mas validaciones de la siguiente manera:
 
