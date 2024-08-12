@@ -29,8 +29,6 @@ def compareTriplets(a, b):
             results[0] += 1
         elif a[i] < b[i]:
             results[1] += 1
-        #elif  a[i] == b[i]:
-        #    results[1] += 1
             
     return(results)
             
