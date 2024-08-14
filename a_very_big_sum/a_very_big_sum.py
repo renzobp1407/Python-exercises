@@ -17,16 +17,13 @@ import sys
 def aVeryBigSum(ar):
     # Write your code here
     
-    result_long_int = [0]
+    result_long_int = 0
     
     for i in range(len(ar)):
         
-        for digit in str(i):
-            if digit
+        result_long_int = result_long_int + ar[i]
 
-        
-        print(ar[i])
-        
+
     return(result_long_int)
     
 
